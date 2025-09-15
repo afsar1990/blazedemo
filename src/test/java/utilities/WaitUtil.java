@@ -1,5 +1,7 @@
 package utilities;
 
+import org.openqa.selenium.WebDriver;
+import java.time.Duration;
 import com.google.common.base.Function;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -14,6 +16,10 @@ import java.util.concurrent.TimeUnit;
  * Created by sadiq on 23/09/20.
  */
 public class WaitUtil {
+
+    public static void setImplicitTimeOut(WebDriver driver, int seconds) {
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(seconds));
+    }
 
 
 
