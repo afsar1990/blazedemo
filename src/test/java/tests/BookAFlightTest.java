@@ -30,13 +30,6 @@ import java.io.File;
  */
 public class BookAFlightTest extends BaseTest {
 
-     @Test
-    public void testFlightBooking() {
-        driver.get("https://blazedemo.com/");
-        WebElement source = driver.findElement(By.name("fromPort"));
-        // Add your test steps here
-    }
-}
 
     private static Logger _log = LoggerFactory.getLogger(BookAFlightTest.class);
     private String testCaseName = this.getClass().getName().trim();
@@ -107,6 +100,14 @@ public class BookAFlightTest extends BaseTest {
         purchasePage.enterFlyerCardName(data.getBookingDetails().getCardName());
         purchasePage.clickPurchaseFlights();
     }
+
+@Test
+    public void testFlightBooking() {
+        driver.get("https://blazedemo.com/");
+        WebElement source = driver.findElement(By.name("fromPort"));
+        // Add your test steps here
+    }
+}
 
 
     @Test(description = "Confirmation page displayed after purchase", dependsOnMethods ="purchaseFlightTicket")
