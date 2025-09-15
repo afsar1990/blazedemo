@@ -1,5 +1,11 @@
 package utilities;
 
+
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import java.io.File;
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -19,6 +25,18 @@ import tests.BaseTest;
 /**
  * Created by sadiq on 23/09/20.
  */
+
+public class ScreenshotUtil {
+    public static void captureScreenShot(WebDriver driver, String fileName) {
+        try {
+            File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+            File dest = new File("screenshots/" + fileName + ".png");
+            FileUtils.copyFile(src, dest);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
 public class ScreenshotUtil extends TestListenerAdapter implements ITestListener {
     protected static WebDriver driver;
 
