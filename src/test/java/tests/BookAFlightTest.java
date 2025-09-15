@@ -1,5 +1,10 @@
 package tests;
 
+
+import base.BaseTest;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
 import builder.BookingDetailsBuilder;
 import model.BookingDetailsModel;
 import org.openqa.selenium.support.PageFactory;
@@ -24,6 +29,14 @@ import java.io.File;
  * Created by sadiq on 23/09/20.
  */
 public class BookAFlightTest extends BaseTest {
+
+     @Test
+    public void testFlightBooking() {
+        driver.get("https://blazedemo.com/");
+        WebElement source = driver.findElement(By.name("fromPort"));
+        // Add your test steps here
+    }
+}
 
     private static Logger _log = LoggerFactory.getLogger(BookAFlightTest.class);
     private String testCaseName = this.getClass().getName().trim();
